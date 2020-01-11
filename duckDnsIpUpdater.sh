@@ -9,4 +9,5 @@ if ping -q -c 1 -W 1 208.67.222.222 >/dev/null; then
     #do something
 else
     echo "You have no IPv4 connectivity. This is a problem!"
+    exit
 fi

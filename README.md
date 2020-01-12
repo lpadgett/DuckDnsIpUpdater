@@ -1,7 +1,7 @@
 # DuckDnsIpUpdater
-I wrote a script to automatically update your device's IP on [DuckDNS](www.duckdns.org) so you don't have to (:
+I wrote a script to make a cron job that automatically updates your device's IP on [DuckDNS](www.duckdns.org) so you don't have to! (:
 
-Just download the script, grant it the proper permissions, run it, and voilà! The IP for the corresponding domain will be updated periodically in the time interval you specified.
+Just download the script, grant it the proper permissions, run it, and voilà! The IP for the corresponding domain will be updated every 10 minutes (in the future I'll add functionality to permit users to set custom timeframes).
 
 
 

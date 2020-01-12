@@ -22,8 +22,14 @@ if ping -q -c 1 -W 1 208.67.222.222 >/dev/null; then
 
     # Since DuckDNS will detect the IPv4 address of the requesting device if not supplied, leave IP blank
     # See documentation: https://www.duckdns.org/spec.jsp
-    echo "curl \"https://www.duckdns.org/update?domains={$domain}&token={$token}\"" >> "$filename.txt"
+    echo "*/10 * * * * curl \"https://www.duckdns.org/update?domains={$domain}&token={$token}\"" >> "$filename.txt"
 
+    # Send file to crontab
+    crontab $filename.txt
+
+    # Finish up
+    echo "All done! Feel free to delete the file you just created in the current directory, as it is no longer needed."
+    exit
 else
     echo "You have no IPv4 connectivity. Fix this before you proceed!"
     exit
